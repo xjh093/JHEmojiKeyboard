@@ -1,13 +1,16 @@
 # JHEmojiKeyboard
 Emoji Keyboard
+- Emoji 表情键盘
 
-## What is it?
+---
+
+# What
 
 ![image](https://github.com/xjh093/JHEmojiKeyboard/blob/master/JHEmojiKeyboard/image/gif.gif)
 
 ---
 
-## Use
+# Usage
 
 ```
     JHEmojiPadConfig *config = [[JHEmojiPadConfig alloc] init];
@@ -22,7 +25,6 @@ Emoji Keyboard
 ```
 ---
 
-## Logs:
-
+# Logs
 ### 2018-05-15
 1.upload.
