@@ -35,12 +35,14 @@ typedef NS_ENUM(NSUInteger, JHEmojiType) {
 };
 
 typedef void (^JHEmojiClickBlock)(NSString *face,NSString *text);
+typedef void (^JHEmojiDeleteBlock)(void);
 
 @class JHEmojiPadConfig;
 
 @interface JHEmojiPadView : UIView
 
 @property (nonatomic,    copy) JHEmojiClickBlock emojiClickBlock;
+@property (nonatomic,    copy) JHEmojiDeleteBlock emojiDeleteBlock;
 
 - (instancetype)initWithFrame:(CGRect)frame config:(JHEmojiPadConfig *)config;
 
