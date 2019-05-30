@@ -165,10 +165,17 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dic = _dataArray[indexPath.row];
-    if (_emojiClickBlock) {
-        _emojiClickBlock(dic.allValues[0],dic.allKeys[0]);
+    NSString *text = dic.allValues[0];
+    NSLog(@"点击了表情:%@",text);
+    if ([text isEqualToString:@"[删除]"]) {
+        if (_emojiDeleteBlock) {
+            _emojiDeleteBlock();
+        }
+    }else{
+        if (_emojiClickBlock) {
+            _emojiClickBlock(dic.allValues[0],dic.allKeys[0]);
+        }
     }
-    //NSLog(@"点击了表情:%@",dic.allValues[0]);
 }
 
 #pragma mark - UIScrollViewDelegate
