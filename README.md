@@ -26,5 +26,8 @@ Emoji Keyboard
 ---
 
 # Logs
+### 2019-05-30
+1.fix bugs.
+
 ### 2018-05-15
 1.upload.
