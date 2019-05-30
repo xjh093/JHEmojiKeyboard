@@ -110,6 +110,9 @@
 
 - (void)layoutSubviews{
     [self xx_layout_pageControl];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self xx_layout_pageControl];
+    });
 }
 
 - (void)xx_layout_pageControl
@@ -128,10 +131,6 @@
         frame.size.width += 7;
         frame.size.height = CGRectGetHeight(_pageControl.frame);
         
-        // 'layoutSubviews' will be called twice by system
-        // so we do this:
-        // first time, create buttons
-        // second time, set frames
         UIButton *button = [_pageControl viewWithTag:100 + i];
         if (!button) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
