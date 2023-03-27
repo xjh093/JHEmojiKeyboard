@@ -109,10 +109,12 @@
 }
 
 - (void)layoutSubviews{
-    [self xx_layout_pageControl];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    if ([[UIDevice currentDevice].systemVersion floatValue] < 13.0) {
         [self xx_layout_pageControl];
-    });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self xx_layout_pageControl];
+        });
+    }
 }
 
 - (void)xx_layout_pageControl
